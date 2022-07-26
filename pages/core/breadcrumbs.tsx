@@ -127,7 +127,7 @@ export default function BreadcrumbsExample(IExampleProps: IExampleProps) {
 
     
     return (
-        <Example options={options} {...IExampleProps}>
+        <Example options={options}>
             <Card elevation={0} style={{ width: `${state.width}%` }}>
                 <Breadcrumbs
                     collapseFrom={state.collapseFrom}

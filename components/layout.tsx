@@ -44,7 +44,11 @@ export default function Layout({ children }: LayoutProps) {
             </ul>
           </nav>
         </aside>
-        <main className='flex-1'>{children}</main>
+        <main className='flex-1'>
+          <div className="main">
+            {children}
+          </div>
+        </main>
       </div>
     </div>
   );

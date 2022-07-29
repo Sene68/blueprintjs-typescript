@@ -16,6 +16,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/breadcrumbs',
         title: 'BreadCrumbs',
+    },
+    {
+        href: '/core/buttons',
+        title: 'Buttons',
     }
   ];
 

@@ -20,6 +20,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/buttons',
         title: 'Buttons',
+    },
+    {
+        href: '/core/buttongroup',
+        title: 'Button Group',
     }
   ];
 

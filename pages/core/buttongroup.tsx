@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 
 import { Alignment, AnchorButton, Button, ButtonGroup, Classes, H5, Icon, Intent, Switch } from "@blueprintjs/core";
 import { Example, handleBooleanChange, handleValueChange, IExampleProps } from "@blueprintjs/docs-theme";
@@ -11,90 +11,114 @@ import '@blueprintjs/core/lib/css/blueprint.css';
 export interface IButtonGroupExampleState {
     alignText: Alignment;
     fill: boolean;
-    iconOnly: boolean;
     intent: Intent;
     minimal: boolean;
     large: boolean;
     vertical: boolean;
 }
 
-export default class ButtonGroupExample extends React.PureComponent<IExampleProps, IButtonGroupExampleState> {
-    public state: IButtonGroupExampleState = {
+export default function ButtonGroupExample(IExampleProps: IExampleProps) {
+    const [state, setState] = useState<IButtonGroupExampleState>({
         alignText: Alignment.CENTER,
         fill: false,
-        iconOnly: false,
         intent: Intent.NONE,
         large: false,
         minimal: false,
         vertical: false,
+    });
+
+    const [iconOnly, setIconOnly] = useState<boolean>(false);
+
+    const handleFillChange = () => {
+        setState({
+            ...state,
+            fill: !state.fill
+        }); 
     };
 
-    private handleFillChange = handleBooleanChange(fill => this.setState({ fill }));
+    const handleIconOnlyChange = () => {
+        setIconOnly(!iconOnly);
+    };
 
-    private handleIconOnlyChange = handleBooleanChange(iconOnly => this.setState({ iconOnly }));
+    const handleIntentChange = handleValueChange((intent: Intent) => setState({
+        ...state,
+        intent: intent
+    }));
 
-    private handleIntentChange = handleValueChange((intent: Intent) => this.setState({ intent }));
+    const handleLargeChange = () => {
+        setState({
+            ...state,
+            large: !state.large
+        }); 
+    };
 
-    private handleLargeChange = handleBooleanChange(large => this.setState({ large }));
+    const handleMinimalChange = () => {
+        setState({
+            ...state,
+            minimal: !state.minimal
+        }); 
+    };
 
-    private handleMinimalChange = handleBooleanChange(minimal => this.setState({ minimal }));
+    const handleVerticalChange = () => {
+        setState({
+            ...state,
+            vertical: !state.vertical
+        }); 
+    };
 
-    private handleVerticalChange = handleBooleanChange(vertical => this.setState({ vertical }));
+    const handleAlignChange = (alignText: Alignment) => {
+        setState({
+            ...state,
+            alignText: alignText
+        }); 
+    };
 
-    public render() {
-        const { iconOnly, intent, ...bgProps } = this.state;
-        // props for every button in the group
-        const buttonProps = { intent };
-
-        const intentLabelInfo = (
-            <Tooltip2
-                content={
-                    <span className={Classes.TEXT_SMALL}>
-                        Intents are set individually on each button <br />
-                        in the group, not the ButtonGroup wrapper.
-                    </span>
-                }
-                placement="top"
-                minimal={true}
-            >
-                <span>
-                    Intent{" "}
-                    <span style={{ padding: 2, lineHeight: "16px", verticalAlign: "top" }}>
-                        <Icon className={Classes.TEXT_MUTED} icon="info-sign" size={12} />
-                    </span>
+    const intentLabelInfo = (
+        <Tooltip2
+            content={
+                <span className={Classes.TEXT_SMALL}>
+                    Intents are set individually on each button <br />
+                    in the group, not the ButtonGroup wrapper.
                 </span>
-            </Tooltip2>
-        );
-        const options = (
-            <>
-                <H5>Props</H5>
-                <Switch checked={this.state.fill} label="Fill" onChange={this.handleFillChange} />
-                <Switch checked={this.state.large} label="Large" onChange={this.handleLargeChange} />
-                <Switch checked={this.state.minimal} label="Minimal" onChange={this.handleMinimalChange} />
-                <Switch checked={this.state.vertical} label="Vertical" onChange={this.handleVerticalChange} />
-                <IntentSelect intent={this.state.intent} label={intentLabelInfo} onChange={this.handleIntentChange} />
-                <AlignmentSelect align={this.state.alignText} onChange={this.handleAlignChange} />
-                <H5>Example</H5>
-                <Switch checked={this.state.iconOnly} label="Icons only" onChange={this.handleIconOnlyChange} />
-            </>
-        );
+            }
+            placement="top"
+            minimal={true}
+        >
+            <span>
+                Intent{" "}
+                <span style={{ padding: 2, lineHeight: "16px", verticalAlign: "top" }}>
+                    <Icon className={Classes.TEXT_MUTED} icon="info-sign" size={12} />
+                </span>
+            </span>
+        </Tooltip2>
+    );
+    const options = (
+        <>
+            <H5>Props</H5>
+            <Switch checked={state.fill} label="Fill" onChange={handleFillChange} />
+            <Switch checked={state.large} label="Large" onChange={handleLargeChange} />
+            <Switch checked={state.minimal} label="Minimal" onChange={handleMinimalChange} />
+            <Switch checked={state.vertical} label="Vertical" onChange={handleVerticalChange} />
+            <IntentSelect intent={state.intent} label={intentLabelInfo} onChange={handleIntentChange} />
+            <AlignmentSelect align={state.alignText} onChange={handleAlignChange} />
+            <H5>Example</H5>
+            <Switch checked={iconOnly} label="Icons only" onChange={handleIconOnlyChange} />
+        </>
+    );
 
-        return (
-            <Example options={options} {...this.props}>
-                {/* set `minWidth` so `alignText` will have an effect when vertical */}
-                <ButtonGroup style={{ minWidth: 200 }} {...bgProps}>
-                    <Button {...buttonProps} icon="database" text={iconOnly ? undefined : "Queries"} />
-                    <Button {...buttonProps} icon="function" text={iconOnly ? undefined : "Functions"} />
-                    <AnchorButton
-                        {...buttonProps}
-                        icon="cog"
-                        rightIcon="settings"
-                        text={iconOnly ? undefined : "Options"}
-                    />
-                </ButtonGroup>
-            </Example>
-        );
-    }
-
-    private handleAlignChange = (alignText: Alignment) => this.setState({ alignText });
+    return (
+        <Example options={options}>
+            {/* set `minWidth` so `alignText` will have an effect when vertical */}
+            <ButtonGroup style={{ minWidth: 200 }} {...state}>
+                <Button intent={state.intent} icon="database" text={iconOnly ? undefined : "Queries"} />
+                <Button intent={state.intent} icon="function" text={iconOnly ? undefined : "Functions"} />
+                <AnchorButton
+                    intent={state.intent}
+                    icon="cog"
+                    rightIcon="settings"
+                    text={iconOnly ? undefined : "Options"}
+                />
+            </ButtonGroup>
+        </Example>
+    );
 }

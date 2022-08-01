@@ -24,6 +24,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/buttongroup',
         title: 'Button Group',
+    },
+    {
+        href: '/core/callout',
+        title: 'Callout',
     }
   ];
 

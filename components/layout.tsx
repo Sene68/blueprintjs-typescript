@@ -28,6 +28,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/callout',
         title: 'Callout',
+    },
+    {
+        href: '/core/card',
+        title: 'Card',
     }
   ];
 

@@ -32,6 +32,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/card',
         title: 'Card',
+    },
+    {
+        href: '/core/collapse',
+        title: 'Collapse',
     }
   ];
 

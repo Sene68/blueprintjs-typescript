@@ -36,6 +36,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/collapse',
         title: 'Collapse',
+    },
+    {
+        href: '/core/divider',
+        title: 'Divider',
     }
   ];
 

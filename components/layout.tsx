@@ -40,6 +40,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/divider',
         title: 'Divider',
+    },
+    {
+        href: '/core/editabletext',
+        title: 'Editable Text',
     }
   ];
 

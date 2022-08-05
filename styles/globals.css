@@ -110,3 +110,7 @@ a {
 .docs-example-slider .bp4-slider {
   margin: 20px;
 }
+
+[data-example-id=EditableTextExample] .docs-example {
+  display: block;
+}

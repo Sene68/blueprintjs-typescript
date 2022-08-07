@@ -44,6 +44,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/editabletext',
         title: 'Editable Text',
+    },
+    {
+        href: '/core/icon',
+        title: 'Icon',
     }
   ];
 

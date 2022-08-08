@@ -48,6 +48,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/icon',
         title: 'Icon',
+    },
+    {
+        href: '/core/menu',
+        title: 'Menu',
     }
   ];
 

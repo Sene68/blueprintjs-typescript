@@ -52,6 +52,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/menu',
         title: 'Menu',
+    },
+    {
+        href: '/core/navbar',
+        title: 'Navbar',
     }
   ];
 

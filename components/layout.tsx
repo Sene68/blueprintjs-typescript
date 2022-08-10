@@ -56,6 +56,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/navbar',
         title: 'Navbar',
+    },
+    {
+        href: '/core/nonIdealState',
+        title: 'Non Ideal State',
     }
   ];
 

@@ -60,6 +60,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/nonIdealState',
         title: 'Non Ideal State',
+    },
+    {
+        href: '/core/progress',
+        title: 'Progress',
     }
   ];
 

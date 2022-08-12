@@ -64,6 +64,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/progress',
         title: 'Progress',
+    },
+    {
+        href: '/core/spinner',
+        title: 'Spinner',
     }
   ];
 

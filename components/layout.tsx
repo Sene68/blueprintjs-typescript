@@ -68,6 +68,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/spinner',
         title: 'Spinner',
+    },
+    {
+        href: '/core/tag',
+        title: 'Tag',
     }
   ];
 

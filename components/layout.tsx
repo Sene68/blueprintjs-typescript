@@ -76,6 +76,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/text',
         title: 'Text',
+    },
+    {
+        href: '/core/tree',
+        title: 'Tree',
     }
   ];
 

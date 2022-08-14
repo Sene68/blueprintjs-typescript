@@ -72,6 +72,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/tag',
         title: 'Tag',
+    },
+    {
+        href: '/core/text',
+        title: 'Text',
     }
   ];
 

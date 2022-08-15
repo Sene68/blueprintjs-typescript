@@ -80,6 +80,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/tree',
         title: 'Tree',
+    },
+    {
+        href: '/core/formgroup',
+        title: 'Form group',
     }
   ];
 

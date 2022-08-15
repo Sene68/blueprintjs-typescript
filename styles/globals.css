@@ -114,3 +114,7 @@ a {
 [data-example-id=EditableTextExample] .docs-example {
   display: block;
 }
+
+.docs-example-formgroup .docs-example {
+  flex-direction: column;
+}

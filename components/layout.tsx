@@ -88,6 +88,10 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/controlgroup',
         title: 'Control group',
+    },
+    {
+        href: '/core/checkbox',
+        title: 'Checkbox',
     }
   ];
 

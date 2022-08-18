@@ -11,7 +11,7 @@ export interface IAlignSelectProps {
 
 export default function AlignmentSelect(props: IAlignSelectProps) {
     const label = "Align Text";
-    const allowCenter = true;
+    const allowCenter = props.allowCenter;
 
     const handleAlignLeft = () => { 
         props.onChange(Alignment.LEFT);

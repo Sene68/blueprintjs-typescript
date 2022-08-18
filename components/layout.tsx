@@ -92,7 +92,11 @@ export default function Layout({ children }: LayoutProps) {
     {
         href: '/core/checkbox',
         title: 'Checkbox',
-    }
+    },
+    {
+      href: '/core/radio',
+      title: 'Radio',
+  },
   ];
 
   return (

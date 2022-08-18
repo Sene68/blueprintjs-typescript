@@ -96,7 +96,11 @@ export default function Layout({ children }: LayoutProps) {
     {
       href: '/core/radio',
       title: 'Radio',
-  },
+    },
+    {
+      href: '/core/slider',
+      title: 'Slider',
+    }
   ];
 
   return (

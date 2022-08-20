@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { Button, Card, Classes, Elevation, H5, Label, Slider, Switch } from "@blueprintjs/core";
-import { Example, IExampleProps } from "@blueprintjs/docs-theme";
+import { Button, Card, Classes, Elevation, H5, Label, Slider, Switch } from '@blueprintjs/core';
+import { Example, IExampleProps } from '@blueprintjs/docs-theme';
 import '@blueprintjs/core/lib/css/blueprint.css';
 
 export interface ICardExampleState {
@@ -12,21 +12,21 @@ export interface ICardExampleState {
 export default function CardExample(IExampleProps: IExampleProps) {
     const [state, setState] = useState<ICardExampleState>({
         elevation: 0,
-        interactive: false
+        interactive: false,
     });
 
     const handleElevationChange = (elevation: Elevation) => {
         setState({
             ...state,
-            elevation: elevation
-        }); 
+            elevation: elevation,
+        });
     };
 
     const handleInteractiveChange = () => {
         setState({
             ...state,
-            interactive: !state.interactive
-        }); 
+            interactive: !state.interactive,
+        });
     };
 
     const options = (
@@ -40,21 +40,21 @@ export default function CardExample(IExampleProps: IExampleProps) {
                     showTrackFill={false}
                     value={state.elevation}
                     onChange={handleElevationChange}
-                    handleHtmlProps={{ "aria-label": "card elevation" }}
+                    handleHtmlProps={{ 'aria-label': 'card elevation' }}
                 />
             </Label>
         </>
     );
 
     return (
-        <Example options={options}>
+        <Example options={options} {...IExampleProps}>
             <Card {...state}>
                 <H5>
                     <a href="#">Analytical applications</a>
                 </H5>
                 <p>
-                    User interfaces that enable people to interact smoothly with data, ask better questions, and
-                    make better decisions.
+                    User interfaces that enable people to interact smoothly with data, ask better questions, and make
+                    better decisions.
                 </p>
                 <Button text="Explore products" className={Classes.BUTTON} />
             </Card>

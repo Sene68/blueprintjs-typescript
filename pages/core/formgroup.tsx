@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { FormGroup, H5, InputGroup, Intent, Switch } from "@blueprintjs/core";
-import { Example, handleBooleanChange, handleValueChange, IExampleProps } from "@blueprintjs/docs-theme";
+import { FormGroup, H5, InputGroup, Intent, Switch } from '@blueprintjs/core';
+import { Example, handleBooleanChange, handleValueChange, IExampleProps } from '@blueprintjs/docs-theme';
 
-import { IntentSelect } from "../../components/common/intentSelect";
-
+import { IntentSelect } from '../../components/common/intentSelect';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 
@@ -29,41 +28,54 @@ export default function FormGroupExample(IExampleProps: IExampleProps) {
         subLabel: false,
     });
 
-    const handleDisabledChange = handleBooleanChange((disabled: boolean) => setState({ 
-        ...state,
-        disabled: disabled
-    }));
+    const handleDisabledChange = handleBooleanChange((disabled: boolean) =>
+        setState({
+            ...state,
+            disabled: disabled,
+        }),
+    );
 
-    const handleHelperTextChange = handleBooleanChange((helperText: boolean) => setState({ 
-        ...state,
-        helperText: helperText
-    }));
+    const handleHelperTextChange = handleBooleanChange((helperText: boolean) =>
+        setState({
+            ...state,
+            helperText: helperText,
+        }),
+    );
 
-    const handleInlineChange = handleBooleanChange((inline: boolean) => setState({ 
-        ...state,
-        inline: inline
-    }));
+    const handleInlineChange = handleBooleanChange((inline: boolean) =>
+        setState({
+            ...state,
+            inline: inline,
+        }),
+    );
 
-    const handleLabelChange = handleBooleanChange((label: boolean) => setState({ 
-        ...state,
-        label: label
-    }));
+    const handleLabelChange = handleBooleanChange((label: boolean) =>
+        setState({
+            ...state,
+            label: label,
+        }),
+    );
 
-    const handleRequiredLabelChange = handleBooleanChange((requiredLabel: boolean) => setState({ 
-        ...state,
-        requiredLabel: requiredLabel
-    }));
+    const handleRequiredLabelChange = handleBooleanChange((requiredLabel: boolean) =>
+        setState({
+            ...state,
+            requiredLabel: requiredLabel,
+        }),
+    );
 
-    const handleSubLabelChange = handleBooleanChange((subLabel: boolean) => setState({ 
-        ...state,
-        subLabel: subLabel
-    }));
+    const handleSubLabelChange = handleBooleanChange((subLabel: boolean) =>
+        setState({
+            ...state,
+            subLabel: subLabel,
+        }),
+    );
 
-    const handleIntentChange = handleValueChange((intent: Intent) => setState({ 
-        ...state,
-        intent: intent
-    }));
-
+    const handleIntentChange = handleValueChange((intent: Intent) =>
+        setState({
+            ...state,
+            intent: intent,
+        }),
+    );
 
     const options = (
         <>
@@ -79,26 +91,31 @@ export default function FormGroupExample(IExampleProps: IExampleProps) {
     );
 
     return (
-        <Example options={options} {...IExampleProps} className={"docs-example-formgroup"}>
+        <Example options={options} {...IExampleProps} className={'docs-example-formgroup'}>
             <FormGroup
                 disabled={state.disabled}
-                helperText={state.helperText && "Helper text with details..."}
+                helperText={state.helperText && 'Helper text with details...'}
                 inline={state.inline}
                 intent={state.intent}
-                label={state.label && "Label"}
+                label={state.label && 'Label'}
                 labelFor="text-input"
-                labelInfo={state.requiredLabel && "(required)"}
-                subLabel={state.subLabel && "Label helper text with details..."}
+                labelInfo={state.requiredLabel && '(required)'}
+                subLabel={state.subLabel && 'Label helper text with details...'}
             >
-                <InputGroup id="text-input" placeholder="Placeholder text" disabled={state.disabled} intent={state.intent} />
+                <InputGroup
+                    id="text-input"
+                    placeholder="Placeholder text"
+                    disabled={state.disabled}
+                    intent={state.intent}
+                />
             </FormGroup>
             <FormGroup
                 disabled={state.disabled}
-                helperText={state.helperText && "Helper text with details..."}
+                helperText={state.helperText && 'Helper text with details...'}
                 inline={state.inline}
                 intent={state.intent}
-                label={state.label && "Label"}
-                labelInfo={state.requiredLabel && "(required)"}
+                label={state.label && 'Label'}
+                labelInfo={state.requiredLabel && '(required)'}
             >
                 <Switch label="Engage the hyperdrive" disabled={state.disabled} />
                 <Switch label="Initiate thrusters" disabled={state.disabled} />
@@ -106,4 +123,3 @@ export default function FormGroupExample(IExampleProps: IExampleProps) {
         </Example>
     );
 }
-

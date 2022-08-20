@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 import {
     Boundary,
@@ -11,8 +11,8 @@ import {
     Label,
     RadioGroup,
     Slider,
-} from "@blueprintjs/core";
-import { Example, handleStringChange, IExampleProps } from "@blueprintjs/docs-theme";
+} from '@blueprintjs/core';
+import { Example, handleStringChange, IExampleProps } from '@blueprintjs/docs-theme';
 import '@blueprintjs/core/lib/css/blueprint.css';
 
 export interface IBreadcrumbsExampleState {
@@ -23,22 +23,22 @@ export interface IBreadcrumbsExampleState {
 }
 
 const COLLAPSE_FROM_RADIOS = [
-    { label: "Start", value: Boundary.START.toString() },
-    { label: "End", value: Boundary.END.toString() },
+    { label: 'Start', value: Boundary.START.toString() },
+    { label: 'End', value: Boundary.END.toString() },
 ];
 
 const ITEMS: BreadcrumbProps[] = [
-    { icon: "folder-close", text: "All files" },
-    { icon: "folder-close", text: "Users" },
-    { icon: "folder-close", text: "Janet" },
-    { href: "#", icon: "folder-close", text: "Photos" },
-    { href: "#", icon: "folder-close", text: "Wednesday" },
-    { icon: "document", text: "image.jpg", current: true },
+    { icon: 'folder-close', text: 'All files' },
+    { icon: 'folder-close', text: 'Users' },
+    { icon: 'folder-close', text: 'Janet' },
+    { href: '#', icon: 'folder-close', text: 'Photos' },
+    { href: '#', icon: 'folder-close', text: 'Wednesday' },
+    { icon: 'document', text: 'image.jpg', current: true },
 ];
 // Show less items for always redner example so we can see when everything fits
 const ITEMS_FOR_ALWAYS_RENDER: BreadcrumbProps[] = [
-    { href: "#", icon: "folder-close", text: "Root" },
-    { icon: "document", text: "image.jpg", current: true },
+    { href: '#', icon: 'folder-close', text: 'Root' },
+    { icon: 'document', text: 'image.jpg', current: true },
 ];
 
 export default function BreadcrumbsExample(IExampleProps: IExampleProps) {
@@ -49,11 +49,11 @@ export default function BreadcrumbsExample(IExampleProps: IExampleProps) {
         width: 50,
     });
 
-    const handleChangeCollapse = handleStringChange(collapseFrom =>
+    const handleChangeCollapse = handleStringChange((collapseFrom) =>
         setState({
             ...state,
-            collapseFrom: collapseFrom as Boundary
-        })
+            collapseFrom: collapseFrom as Boundary,
+        }),
     );
 
     const renderLabel = (value: number) => {
@@ -64,29 +64,29 @@ export default function BreadcrumbsExample(IExampleProps: IExampleProps) {
         const width = e;
         setState({
             ...state,
-            width: width
-        })
+            width: width,
+        });
     };
 
     const handleChangeRenderCurrentAsInput = () => {
         setState({
             ...state,
-            renderCurrentAsInput: !state.renderCurrentAsInput
-        })
+            renderCurrentAsInput: !state.renderCurrentAsInput,
+        });
     };
 
     const handleChangeAlwaysRenderOverflow = () => {
         setState({
             ...state,
-            alwaysRenderOverflow: !state.alwaysRenderOverflow
-        })
+            alwaysRenderOverflow: !state.alwaysRenderOverflow,
+        });
     };
 
     const renderBreadcrumbInput = ({ text }: BreadcrumbProps) => {
-        return <BreadcrumbInput defaultValue={typeof text === "string" ? text : undefined} />;
+        return <BreadcrumbInput defaultValue={typeof text === 'string' ? text : undefined} />;
     };
 
-    const breadcrumbWidthLabelId = "num-visible-items-label";
+    const breadcrumbWidthLabelId = 'num-visible-items-label';
 
     const options = (
         <>
@@ -120,14 +120,13 @@ export default function BreadcrumbsExample(IExampleProps: IExampleProps) {
                 onChange={handleChangeWidth}
                 showTrackFill={false}
                 value={state.width}
-                handleHtmlProps={{ "aria-labelledby": breadcrumbWidthLabelId }}
+                handleHtmlProps={{ 'aria-labelledby': breadcrumbWidthLabelId }}
             />
         </>
     );
 
-    
     return (
-        <Example options={options}>
+        <Example options={options} {...IExampleProps}>
             <Card elevation={0} style={{ width: `${state.width}%` }}>
                 <Breadcrumbs
                     collapseFrom={state.collapseFrom}
@@ -137,19 +136,14 @@ export default function BreadcrumbsExample(IExampleProps: IExampleProps) {
             </Card>
         </Example>
     );
-
-    
-
-    
 }
 
 function BreadcrumbInput(props: any) {
-    const [text, setText] = useState(props.defaultValue ?? "");
+    const [text, setText] = useState(props.defaultValue ?? '');
 
     const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
         setText((event.target as HTMLInputElement).value);
     };
 
     return <InputGroup placeholder="rename me" value={text} onChange={handleChange} />;
-    
 }

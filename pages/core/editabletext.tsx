@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { Classes, EditableText, FormGroup, H1, H5, Intent, NumericInput, Switch } from "@blueprintjs/core";
-import { Example, handleBooleanChange, handleValueChange, IExampleProps } from "@blueprintjs/docs-theme";
+import { Classes, EditableText, FormGroup, H1, H5, Intent, NumericInput, Switch } from '@blueprintjs/core';
+import { Example, handleBooleanChange, handleValueChange, IExampleProps } from '@blueprintjs/docs-theme';
 
-import { IntentSelect } from "../../components/common/intentSelect";
+import { IntentSelect } from '../../components/common/intentSelect';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 
-const INPUT_ID = "EditableTextExample-max-length";
+const INPUT_ID = 'EditableTextExample-max-length';
 
 export interface IEditableTextExampleState {
     alwaysRenderInput?: boolean;
@@ -26,39 +26,49 @@ export default function EditableTextExample(IExampleProps: IExampleProps) {
         disabled: false,
         intent: Intent.NONE,
         maxLength: undefined,
-        report: "",
-        selectAllOnFocus: false
+        report: '',
+        selectAllOnFocus: false,
     });
 
-    const toggleDisabled = handleBooleanChange((disabled: boolean) => setState({
-        ...state,
-        disabled: disabled
-    }));
+    const toggleDisabled = handleBooleanChange((disabled: boolean) =>
+        setState({
+            ...state,
+            disabled: disabled,
+        }),
+    );
 
-    const handleIntentChange = handleValueChange((intent: Intent) => setState({
-        ...state,
-        intent: intent
-    }));
+    const handleIntentChange = handleValueChange((intent: Intent) =>
+        setState({
+            ...state,
+            intent: intent,
+        }),
+    );
 
-    const toggleSelectAll = handleBooleanChange((selectAllOnFocus: boolean) => setState({
-        ...state,
-        selectAllOnFocus: selectAllOnFocus
-    }));
+    const toggleSelectAll = handleBooleanChange((selectAllOnFocus: boolean) =>
+        setState({
+            ...state,
+            selectAllOnFocus: selectAllOnFocus,
+        }),
+    );
 
-    const toggleSwap = handleBooleanChange((confirmOnEnterKey: boolean) => setState({
-        ...state,
-        confirmOnEnterKey: confirmOnEnterKey
-    }));
+    const toggleSwap = handleBooleanChange((confirmOnEnterKey: boolean) =>
+        setState({
+            ...state,
+            confirmOnEnterKey: confirmOnEnterKey,
+        }),
+    );
 
-    const toggleAlwaysRenderInput = handleBooleanChange((alwaysRenderInput: boolean) => setState({
-        ...state,
-        alwaysRenderInput: alwaysRenderInput
-    }));
+    const toggleAlwaysRenderInput = handleBooleanChange((alwaysRenderInput: boolean) =>
+        setState({
+            ...state,
+            alwaysRenderInput: alwaysRenderInput,
+        }),
+    );
 
     const handleReportChange = (report: string) => {
         setState({
             ...state,
-            report: report
+            report: report,
         });
     };
 
@@ -66,14 +76,14 @@ export default function EditableTextExample(IExampleProps: IExampleProps) {
         if (maxLength === 0) {
             setState({
                 ...state,
-                maxLength: undefined
+                maxLength: undefined,
             });
         } else {
             const report = state.report.slice(0, maxLength);
             setState({
                 ...state,
                 maxLength: maxLength,
-                report: report
+                report: report,
             });
         }
     };
@@ -91,23 +101,15 @@ export default function EditableTextExample(IExampleProps: IExampleProps) {
                     min={0}
                     onValueChange={handleMaxLengthChange}
                     placeholder="Unlimited"
-                    value={state.maxLength || ""}
+                    value={state.maxLength || ''}
                 />
             </FormGroup>
             <Switch checked={state.disabled} label="Disabled" onChange={toggleDisabled} />
-            <Switch
-                checked={state.selectAllOnFocus}
-                label="Select all on focus"
-                onChange={toggleSelectAll}
-            />
+            <Switch checked={state.selectAllOnFocus} label="Select all on focus" onChange={toggleSelectAll} />
             <Switch checked={state.confirmOnEnterKey} onChange={toggleSwap}>
                 Swap keypress for confirm and newline (multiline only)
             </Switch>
-            <Switch
-                checked={state.alwaysRenderInput}
-                label="Always render input"
-                onChange={toggleAlwaysRenderInput}
-            />
+            <Switch checked={state.alwaysRenderInput} label="Always render input" onChange={toggleAlwaysRenderInput} />
         </>
     );
 

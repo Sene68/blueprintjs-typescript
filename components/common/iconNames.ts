@@ -1,6 +1,6 @@
-import { IconName, IconNames } from "@blueprintjs/icons";
+import { IconName, IconNames } from '@blueprintjs/icons';
 
-export const NONE = "(none)";
+export const NONE = '(none)';
 export type IconNameOrNone = IconName | typeof NONE;
 
 export function getIconNames(): IconNameOrNone[] {

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { Button, H5, Intent, Switch, Tag } from "@blueprintjs/core";
-import { Example, handleBooleanChange, handleValueChange, IExampleProps } from "@blueprintjs/docs-theme";
+import { Button, H5, Intent, Switch, Tag } from '@blueprintjs/core';
+import { Example, handleBooleanChange, handleValueChange, IExampleProps } from '@blueprintjs/docs-theme';
 
-import { IntentSelect } from "../../components/common/intentSelect";
+import { IntentSelect } from '../../components/common/intentSelect';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 
@@ -18,9 +18,9 @@ export interface ITagExampleState {
     tags: string[];
 }
 
-const INITIAL_TAGS = ["London", "New York", "San Francisco", "Seattle"];
+const INITIAL_TAGS = ['London', 'New York', 'San Francisco', 'Seattle'];
 
-export default function TagExample(IExampleProps: IExampleProps){
+export default function TagExample(IExampleProps: IExampleProps) {
     const [state, setState] = useState<ITagExampleState>({
         fill: false,
         intent: Intent.NONE,
@@ -36,49 +36,64 @@ export default function TagExample(IExampleProps: IExampleProps){
 
     const [rightIcon, setRightIcon] = useState<boolean>(false);
 
-    const handleFillChange = handleBooleanChange((fill: boolean) => setState({ 
-        ...state,
-        fill: fill
-     }));
+    const handleFillChange = handleBooleanChange((fill: boolean) =>
+        setState({
+            ...state,
+            fill: fill,
+        }),
+    );
 
     const handleIconChange = handleBooleanChange((icon: boolean) => setIcon(icon));
 
-    const handleIntentChange = handleValueChange((intent: Intent) => setState({ 
-        ...state,
-        intent: intent
-     }));
+    const handleIntentChange = handleValueChange((intent: Intent) =>
+        setState({
+            ...state,
+            intent: intent,
+        }),
+    );
 
-    const handleInteractiveChange = handleBooleanChange((interactive: boolean) => setState({ 
-        ...state,
-        interactive: interactive
-     }));
+    const handleInteractiveChange = handleBooleanChange((interactive: boolean) =>
+        setState({
+            ...state,
+            interactive: interactive,
+        }),
+    );
 
-    const handleLargeChange = handleBooleanChange((large: boolean) => setState({ 
-        ...state,
-        large: large
-     }));
+    const handleLargeChange = handleBooleanChange((large: boolean) =>
+        setState({
+            ...state,
+            large: large,
+        }),
+    );
 
-    const handleMinimalChange = handleBooleanChange((minimal: boolean) => setState({ 
-        ...state,
-        minimal: minimal
-     }));
+    const handleMinimalChange = handleBooleanChange((minimal: boolean) =>
+        setState({
+            ...state,
+            minimal: minimal,
+        }),
+    );
 
-    const handleRemovableChange = handleBooleanChange((removable?: boolean) => setState({ 
-        ...state,
-        removable: removable
-     }));
+    const handleRemovableChange = handleBooleanChange((removable?: boolean) =>
+        setState({
+            ...state,
+            removable: removable,
+        }),
+    );
 
     const handleRightIconChange = handleBooleanChange((rightIcon: boolean) => setRightIcon(rightIcon));
 
-    const handleRoundChange = handleBooleanChange((round: boolean) => setState({ 
-        ...state,
-        round: round
-     }));
+    const handleRoundChange = handleBooleanChange((round: boolean) =>
+        setState({
+            ...state,
+            round: round,
+        }),
+    );
 
-    const resetTags = () => setState({ 
-        ...state,
-        tags: INITIAL_TAGS
-     });
+    const resetTags = () =>
+        setState({
+            ...state,
+            tags: INITIAL_TAGS,
+        });
 
     const options = (
         <>
@@ -97,18 +112,13 @@ export default function TagExample(IExampleProps: IExampleProps){
         </>
     );
 
-    const tagElements = state.tags.map(tag => {
-        const onRemove = () => setState({ 
-            ...state,
-            tags: state.tags.filter(t => t !== tag) 
-        });
-
+    const tagElements = state.tags.map((tag) => {
         return (
             <Tag
                 key={tag}
                 //onRemove={state.removable && onRemove}
-                icon={icon === true ? "home" : undefined}
-                rightIcon={rightIcon === true ? "map" : undefined}
+                icon={icon === true ? 'home' : undefined}
+                rightIcon={rightIcon === true ? 'map' : undefined}
                 {...state}
             >
                 {tag}

@@ -1,12 +1,12 @@
-import classNames from "classnames";
-import * as React from "react";
+import classNames from 'classnames';
+import * as React from 'react';
 
-import { Alignment, Button, Classes } from "@blueprintjs/core";
-import { IconName } from "@blueprintjs/icons";
-import { MenuItem2 } from "@blueprintjs/popover2";
-import { ItemRenderer, Select2 } from "@blueprintjs/select";
+import { Alignment, Button, Classes } from '@blueprintjs/core';
+import { IconName } from '@blueprintjs/icons';
+import { MenuItem2 } from '@blueprintjs/popover2';
+import { ItemRenderer, Select2 } from '@blueprintjs/select';
 
-import { getIconNames, IconNameOrNone, NONE } from "./iconNames";
+import { getIconNames, IconNameOrNone, NONE } from './iconNames';
 
 const ICON_NAMES = getIconNames();
 
@@ -67,7 +67,7 @@ export class IconSelect extends React.PureComponent<IIconSelectProps> {
         if (iconName === NONE) {
             return true;
         }
-        if (query === "") {
+        if (query === '') {
             return iconName === this.props.iconName;
         }
         return iconName.toLowerCase().indexOf(query.toLowerCase()) >= 0;

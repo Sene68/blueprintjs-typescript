@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { Classes, Icon, Menu, MenuDivider, MenuItem } from "@blueprintjs/core";
-import { Example, IExampleProps } from "@blueprintjs/docs-theme";
+import { Classes, Icon, Menu, MenuDivider, MenuItem } from '@blueprintjs/core';
+import { Example, IExampleProps } from '@blueprintjs/docs-theme';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 

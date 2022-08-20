@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { H5, Intent, Label, Slider, Spinner, SpinnerSize, Switch } from "@blueprintjs/core";
-import { Example, handleBooleanChange, handleValueChange, IExampleProps } from "@blueprintjs/docs-theme";
+import { H5, Intent, Label, Slider, Spinner, SpinnerSize, Switch } from '@blueprintjs/core';
+import { Example, handleBooleanChange, handleValueChange, IExampleProps } from '@blueprintjs/docs-theme';
 
-import { IntentSelect } from "../../components/common/intentSelect";
+import { IntentSelect } from '../../components/common/intentSelect';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 
@@ -22,29 +22,35 @@ export default function SpinnerExample(IExampleProps: IExampleProps) {
         value: 0.7,
     });
 
-    const spinnerSizeLabelId = "spinner-size-label";
+    const spinnerSizeLabelId = 'spinner-size-label';
 
-    const handleIndeterminateChange = handleBooleanChange((hasValue: boolean) => setState({ 
-        ...state,
-        hasValue: hasValue
-     }));
+    const handleIndeterminateChange = handleBooleanChange((hasValue: boolean) =>
+        setState({
+            ...state,
+            hasValue: hasValue,
+        }),
+    );
 
-    const handleModifierChange = handleValueChange((intent: Intent) => setState({ 
-        ...state,
-        intent: intent
-     }));
-     
+    const handleModifierChange = handleValueChange((intent: Intent) =>
+        setState({
+            ...state,
+            intent: intent,
+        }),
+    );
+
     const renderLabel = (value: number) => value.toFixed(1);
 
-    const valueChange = (value: number) => setState({ 
-        ...state,
-        value: value
-     });
+    const valueChange = (value: number) =>
+        setState({
+            ...state,
+            value: value,
+        });
 
-    const handleSizeChange = (size: number) => setState({ 
-        ...state,
-        size: size
-     });
+    const handleSizeChange = (size: number) =>
+        setState({
+            ...state,
+            size: size,
+        });
 
     const options = (
         <>
@@ -59,7 +65,7 @@ export default function SpinnerExample(IExampleProps: IExampleProps) {
                 stepSize={5}
                 value={state.size}
                 onChange={handleSizeChange}
-                handleHtmlProps={{ "aria-labelledby": spinnerSizeLabelId }}
+                handleHtmlProps={{ 'aria-labelledby': spinnerSizeLabelId }}
             />
             <Switch checked={state.hasValue} label="Known value" onChange={handleIndeterminateChange} />
             <Slider
@@ -72,7 +78,7 @@ export default function SpinnerExample(IExampleProps: IExampleProps) {
                 stepSize={0.1}
                 showTrackFill={false}
                 value={state.value}
-                handleHtmlProps={{ "aria-label": "spinner value" }}
+                handleHtmlProps={{ 'aria-label': 'spinner value' }}
             />
         </>
     );
@@ -80,7 +86,7 @@ export default function SpinnerExample(IExampleProps: IExampleProps) {
     return (
         <Example options={options} {...IExampleProps}>
             <Spinner
-                aria-label={state.hasValue ? `Loading ${state.value * 100}% complete` : "Loading..."}
+                aria-label={state.hasValue ? `Loading ${state.value * 100}% complete` : 'Loading...'}
                 intent={state.intent}
                 size={state.size}
                 value={state.hasValue ? state.value : undefined}

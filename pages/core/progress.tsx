@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { H5, Intent, ProgressBar, Slider, Switch } from "@blueprintjs/core";
-import { Example, handleBooleanChange, handleValueChange, IExampleProps } from "@blueprintjs/docs-theme";
+import { H5, Intent, ProgressBar, Slider, Switch } from '@blueprintjs/core';
+import { Example, handleBooleanChange, handleValueChange, IExampleProps } from '@blueprintjs/docs-theme';
 
-import { IntentSelect } from "../../components/common/intentSelect";
+import { IntentSelect } from '../../components/common/intentSelect';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 
@@ -20,23 +20,27 @@ export default function ProgressExample(IExampleProps: IExampleProps) {
         value: 0.7,
     });
 
-    const handleIndeterminateChange = handleBooleanChange((hasValue: boolean) => setState({ 
-        ...state,
-        hasValue: hasValue
-     }));
+    const handleIndeterminateChange = handleBooleanChange((hasValue: boolean) =>
+        setState({
+            ...state,
+            hasValue: hasValue,
+        }),
+    );
 
-    const handleIntentChange = handleValueChange((intent: Intent) => setState({
-        ...state,
-        intent: intent
-    }));
-
+    const handleIntentChange = handleValueChange((intent: Intent) =>
+        setState({
+            ...state,
+            intent: intent,
+        }),
+    );
 
     const renderLabel = (value: number) => value.toFixed(1);
 
-    const valueChange = (value?: number) => setState({ 
-        ...state,
-        value: value
-     });
+    const valueChange = (value?: number) =>
+        setState({
+            ...state,
+            value: value,
+        });
 
     const options = (
         <>
@@ -53,7 +57,7 @@ export default function ProgressExample(IExampleProps: IExampleProps) {
                 stepSize={0.1}
                 showTrackFill={false}
                 value={state.value}
-                handleHtmlProps={{ "aria-label": "progressbar value" }}
+                handleHtmlProps={{ 'aria-label': 'progressbar value' }}
             />
         </>
     );
@@ -63,5 +67,4 @@ export default function ProgressExample(IExampleProps: IExampleProps) {
             <ProgressBar intent={state.intent} value={state.hasValue ? state.value : undefined} />
         </Example>
     );
-
 }

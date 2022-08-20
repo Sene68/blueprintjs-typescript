@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { Alignment, H5, Switch, Radio, RadioGroup } from "@blueprintjs/core";
-import { Example, handleBooleanChange, handleStringChange, IExampleProps } from "@blueprintjs/docs-theme";
+import { Alignment, H5, Switch, Radio, RadioGroup } from '@blueprintjs/core';
+import { Example, handleBooleanChange, handleStringChange, IExampleProps } from '@blueprintjs/docs-theme';
 
-import AlignmentSelect from "../../components/common/alignmentSelect";
+import AlignmentSelect from '../../components/common/alignmentSelect';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 
@@ -16,39 +16,47 @@ export interface IRadioExampleState {
 }
 
 export default function RadioExample(IExampleProps: IExampleProps) {
-
     const [state, setState] = useState<IRadioExampleState>({
         alignIndicator: Alignment.LEFT,
         disabled: false,
         inline: false,
         large: false,
-        value: "one"
+        value: 'one',
     });
 
-    const handleRadioChange = handleStringChange((value: string) => setState({ 
-        ...state,
-        value: value
-     }));
+    const handleRadioChange = handleStringChange((value: string) =>
+        setState({
+            ...state,
+            value: value,
+        }),
+    );
 
-    const handleAlignChange = (alignIndicator: Alignment) => setState({ 
-        ...state,
-        alignIndicator: alignIndicator
-     });
+    const handleAlignChange = (alignIndicator: Alignment) =>
+        setState({
+            ...state,
+            alignIndicator: alignIndicator,
+        });
 
-    const handleDisabledChange = handleBooleanChange((disabled: boolean) => setState({ 
-        ...state,
-        disabled: disabled
-     }));
+    const handleDisabledChange = handleBooleanChange((disabled: boolean) =>
+        setState({
+            ...state,
+            disabled: disabled,
+        }),
+    );
 
-    const handleInlineChange = handleBooleanChange((inline: boolean) => setState({ 
-        ...state,
-        inline: inline
-     }));
+    const handleInlineChange = handleBooleanChange((inline: boolean) =>
+        setState({
+            ...state,
+            inline: inline,
+        }),
+    );
 
-    const handleLargeChange = handleBooleanChange((large: boolean) => setState({ 
-        ...state,
-        large: large
-     }));
+    const handleLargeChange = handleBooleanChange((large: boolean) =>
+        setState({
+            ...state,
+            large: large,
+        }),
+    );
 
     const options = (
         <>
@@ -80,7 +88,6 @@ export default function RadioExample(IExampleProps: IExampleProps) {
             </RadioGroup>
         </Example>
     );
-
 }
 
 // export class RadioExample extends CheckboxExample {

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { Button, ButtonGroup, Divider, H5, Switch } from "@blueprintjs/core";
-import { Example, handleBooleanChange, IExampleProps } from "@blueprintjs/docs-theme";
+import { Button, ButtonGroup, Divider, H5, Switch } from '@blueprintjs/core';
+import { Example, handleBooleanChange, IExampleProps } from '@blueprintjs/docs-theme';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 
@@ -9,15 +9,17 @@ export interface IDividerExampleState {
     vertical: boolean;
 }
 
-export default function DividerExample(IExampleProps: IExampleProps){
+export default function DividerExample(IExampleProps: IExampleProps) {
     const [state, setState] = useState<IDividerExampleState>({
-        vertical: false
+        vertical: false,
     });
 
-    const handleVerticalChange = handleBooleanChange((vertical: boolean) => setState({
-        ...state,
-        vertical: vertical
-    }));
+    const handleVerticalChange = handleBooleanChange((vertical: boolean) =>
+        setState({
+            ...state,
+            vertical: vertical,
+        }),
+    );
 
     const options = (
         <>
@@ -27,7 +29,7 @@ export default function DividerExample(IExampleProps: IExampleProps){
     );
 
     return (
-        <Example options={options}>
+        <Example options={options} {...IExampleProps}>
             <ButtonGroup minimal={true} vertical={state.vertical}>
                 <Button text="File" />
                 <Button text="Edit" />

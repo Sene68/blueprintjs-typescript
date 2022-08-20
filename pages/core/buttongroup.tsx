@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { Alignment, AnchorButton, Button, ButtonGroup, Classes, H5, Icon, Intent, Switch } from "@blueprintjs/core";
-import { Example, handleBooleanChange, handleValueChange, IExampleProps } from "@blueprintjs/docs-theme";
-import { Tooltip2 } from "@blueprintjs/popover2";
+import { Alignment, AnchorButton, Button, ButtonGroup, Classes, H5, Icon, Intent, Switch } from '@blueprintjs/core';
+import { Example, handleBooleanChange, handleValueChange, IExampleProps } from '@blueprintjs/docs-theme';
+import { Tooltip2 } from '@blueprintjs/popover2';
 
-import AlignmentSelect from "../../components/common/alignmentSelect";
-import { IntentSelect } from "../../components/common/intentSelect";
+import AlignmentSelect from '../../components/common/alignmentSelect';
+import { IntentSelect } from '../../components/common/intentSelect';
 import '@blueprintjs/core/lib/css/blueprint.css';
 
 export interface IButtonGroupExampleState {
@@ -32,45 +32,47 @@ export default function ButtonGroupExample(IExampleProps: IExampleProps) {
     const handleFillChange = () => {
         setState({
             ...state,
-            fill: !state.fill
-        }); 
+            fill: !state.fill,
+        });
     };
 
     const handleIconOnlyChange = () => {
         setIconOnly(!iconOnly);
     };
 
-    const handleIntentChange = handleValueChange((intent: Intent) => setState({
-        ...state,
-        intent: intent
-    }));
+    const handleIntentChange = handleValueChange((intent: Intent) =>
+        setState({
+            ...state,
+            intent: intent,
+        }),
+    );
 
     const handleLargeChange = () => {
         setState({
             ...state,
-            large: !state.large
-        }); 
+            large: !state.large,
+        });
     };
 
     const handleMinimalChange = () => {
         setState({
             ...state,
-            minimal: !state.minimal
-        }); 
+            minimal: !state.minimal,
+        });
     };
 
     const handleVerticalChange = () => {
         setState({
             ...state,
-            vertical: !state.vertical
-        }); 
+            vertical: !state.vertical,
+        });
     };
 
     const handleAlignChange = (alignText: Alignment) => {
         setState({
             ...state,
-            alignText: alignText
-        }); 
+            alignText: alignText,
+        });
     };
 
     const intentLabelInfo = (
@@ -85,8 +87,8 @@ export default function ButtonGroupExample(IExampleProps: IExampleProps) {
             minimal={true}
         >
             <span>
-                Intent{" "}
-                <span style={{ padding: 2, lineHeight: "16px", verticalAlign: "top" }}>
+                Intent{' '}
+                <span style={{ padding: 2, lineHeight: '16px', verticalAlign: 'top' }}>
                     <Icon className={Classes.TEXT_MUTED} icon="info-sign" size={12} />
                 </span>
             </span>
@@ -107,16 +109,16 @@ export default function ButtonGroupExample(IExampleProps: IExampleProps) {
     );
 
     return (
-        <Example options={options}>
+        <Example options={options} {...IExampleProps}>
             {/* set `minWidth` so `alignText` will have an effect when vertical */}
             <ButtonGroup style={{ minWidth: 200 }} {...state}>
-                <Button intent={state.intent} icon="database" text={iconOnly ? undefined : "Queries"} />
-                <Button intent={state.intent} icon="function" text={iconOnly ? undefined : "Functions"} />
+                <Button intent={state.intent} icon="database" text={iconOnly ? undefined : 'Queries'} />
+                <Button intent={state.intent} icon="function" text={iconOnly ? undefined : 'Functions'} />
                 <AnchorButton
                     intent={state.intent}
                     icon="cog"
                     rightIcon="settings"
-                    text={iconOnly ? undefined : "Options"}
+                    text={iconOnly ? undefined : 'Options'}
                 />
             </ButtonGroup>
         </Example>

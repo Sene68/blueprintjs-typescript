@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { Alignment, Checkbox, H5, Label, Switch } from '@blueprintjs/core';
+import { Example, handleBooleanChange, IExampleProps } from '@blueprintjs/docs-theme';
 
-import { Alignment, Checkbox, H5, Label, Switch } from "@blueprintjs/core";
-import { Example, handleBooleanChange, IExampleProps } from "@blueprintjs/docs-theme";
-
-import AlignmentSelect from "../../components/common/alignmentSelect";
+import AlignmentSelect from '../../components/common/alignmentSelect';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 
@@ -23,25 +22,32 @@ export default function CheckboxExample(IExampleProps: IExampleProps) {
         large: false,
     });
 
-    const handleAlignChange = (alignIndicator: Alignment) => setState({ 
-        ...state,
-        alignIndicator: alignIndicator
-     });
+    const handleAlignChange = (alignIndicator: Alignment) =>
+        setState({
+            ...state,
+            alignIndicator: alignIndicator,
+        });
 
-    const handleDisabledChange = handleBooleanChange((disabled: boolean) => setState({ 
-        ...state,
-        disabled: disabled
-     }));
+    const handleDisabledChange = handleBooleanChange((disabled: boolean) =>
+        setState({
+            ...state,
+            disabled: disabled,
+        }),
+    );
 
-    const handleInlineChange = handleBooleanChange((inline: boolean) => setState({ 
-        ...state,
-        inline: inline
-     }));
+    const handleInlineChange = handleBooleanChange((inline: boolean) =>
+        setState({
+            ...state,
+            inline: inline,
+        }),
+    );
 
-    const handleLargeChange = handleBooleanChange((large: boolean) => setState({ 
-        ...state,
-        large: large
-     }));
+    const handleLargeChange = handleBooleanChange((large: boolean) =>
+        setState({
+            ...state,
+            large: large,
+        }),
+    );
 
     const options = (
         <>

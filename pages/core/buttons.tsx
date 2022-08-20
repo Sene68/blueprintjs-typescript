@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { AnchorButton, Button, Code, H5, Intent, Switch } from "@blueprintjs/core";
-import { Example, handleBooleanChange, handleValueChange, IExampleProps } from "@blueprintjs/docs-theme";
+import { AnchorButton, Button, Code, H5, Intent, Switch } from '@blueprintjs/core';
+import { Example, handleBooleanChange, handleValueChange, IExampleProps } from '@blueprintjs/docs-theme';
 
-import { IntentSelect } from "../../components/common/intentSelect";
-import { Size, SizeSelect } from "../../components/common/sizeSelect";
+import { IntentSelect } from '../../components/common/intentSelect';
+import { Size, SizeSelect } from '../../components/common/sizeSelect';
 import '@blueprintjs/core/lib/css/blueprint.css';
 
 export interface IButtonsExampleState {
@@ -19,9 +19,15 @@ export interface IButtonsExampleState {
 
 type intentType = {
     [key: string]: Intent;
-}
-  
-const intentTypes: intentType = {'none': Intent.NONE, 'primary': Intent.PRIMARY, 'success': Intent.SUCCESS, 'warning': Intent.WARNING, 'danger': Intent.DANGER}
+};
+
+const intentTypes: intentType = {
+    none: Intent.NONE,
+    primary: Intent.PRIMARY,
+    success: Intent.SUCCESS,
+    warning: Intent.WARNING,
+    danger: Intent.DANGER,
+};
 
 export default function ButtonsExample(IExampleProps: IExampleProps) {
     const [state, setState] = useState<IButtonsExampleState>({
@@ -31,7 +37,7 @@ export default function ButtonsExample(IExampleProps: IExampleProps) {
         loading: false,
         minimal: false,
         outlined: false,
-        size: "regular"
+        size: 'regular',
     });
 
     const [iconOnly, setIconOnly] = useState<boolean>(false);
@@ -39,58 +45,57 @@ export default function ButtonsExample(IExampleProps: IExampleProps) {
     const handleActiveChange = () => {
         setState({
             ...state,
-            active: !state.active
-        }); 
+            active: !state.active,
+        });
     };
 
     const handleDisabledChange = () => {
         setState({
             ...state,
-            disabled: !state.disabled
+            disabled: !state.disabled,
         });
     };
 
     const handleLoadingChange = () => {
         setState({
             ...state,
-            loading: !state.loading
-        }); 
+            loading: !state.loading,
+        });
     };
 
     const handleMinimalChange = () => {
         setState({
             ...state,
-            minimal: !state.minimal
-        }); 
+            minimal: !state.minimal,
+        });
     };
 
     const handleOutlinedChange = () => {
         setState({
             ...state,
-            outlined: !state.outlined
-        }); 
+            outlined: !state.outlined,
+        });
     };
 
     const handleSizeChange = (size: Size) => {
         setState({
             ...state,
-            size: size
+            size: size,
         });
-    }; 
+    };
 
     const handleIntentChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const intentType = e.target.value;
         const intent = intentTypes[intentType];
         setState({
             ...state,
-            intent: intent
-        }); 
+            intent: intent,
+        });
     };
 
     const handleIconOnlyChange = () => {
         setIconOnly(!iconOnly);
     };
-
 
     const options = (
         <>
@@ -113,13 +118,8 @@ export default function ButtonsExample(IExampleProps: IExampleProps) {
                 <p>
                     <Code>Button</Code>
                 </p>
-                <Button
-                    icon="refresh"
-                    small={state.size === "small"}
-                    large={state.size === "large"}
-                    {...state}
-                >
-                    {!iconOnly && "Click to wiggle"}
+                <Button icon="refresh" small={state.size === 'small'} large={state.size === 'large'} {...state}>
+                    {!iconOnly && 'Click to wiggle'}
                 </Button>
             </div>
             <div>
@@ -131,17 +131,12 @@ export default function ButtonsExample(IExampleProps: IExampleProps) {
                     icon="duplicate"
                     rightIcon="share"
                     target="_blank"
-                    text={iconOnly ? undefined : "Duplicate this page"}
-                    small={state.size === "small"}
-                    large={state.size === "large"}
+                    text={iconOnly ? undefined : 'Duplicate this page'}
+                    small={state.size === 'small'}
+                    large={state.size === 'large'}
                     {...state}
                 />
             </div>
         </Example>
     );
-
-
-
 }
-
-

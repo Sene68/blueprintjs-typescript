@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 import {
     Alignment,
@@ -10,8 +10,8 @@ import {
     NavbarGroup,
     NavbarHeading,
     Switch,
-} from "@blueprintjs/core";
-import { Example, handleBooleanChange, IExampleProps } from "@blueprintjs/docs-theme";
+} from '@blueprintjs/core';
+import { Example, handleBooleanChange, IExampleProps } from '@blueprintjs/docs-theme';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 

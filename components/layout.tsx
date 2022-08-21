@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { Classes, Menu, MenuDivider, MenuItem } from '@blueprintjs/core';
+
+import '@blueprintjs/core/lib/css/blueprint.css';
 
 type LayoutProps = {
     children: React.ReactNode;
 };
 
 export default function Layout({ children }: LayoutProps) {
-    const router = useRouter();
-
-    const menuItems = [
+    const coreComponentItems = [
         {
             href: '/',
             title: 'Homepage',
@@ -81,6 +81,8 @@ export default function Layout({ children }: LayoutProps) {
             href: '/core/tree',
             title: 'Tree',
         },
+    ];
+    const coreFormControlItems = [
         {
             href: '/core/formgroup',
             title: 'Form group',
@@ -109,28 +111,31 @@ export default function Layout({ children }: LayoutProps) {
 
     return (
         <div className="min-h-screen flex flex-col">
-            {/* <header className='bg-purple-200 sticky top-0 h-14 flex justify-center items-center font-semibold uppercase'>
-        Next.js sidebar menu
-      </header> */}
             <div className="flex flex-col md:flex-row flex-1">
                 <aside className="bg-slate-100 w-full md:w-60">
-                    <nav>
-                        <ul>
-                            {menuItems.map(({ href, title }) => (
+                    <Menu className={Classes.ELEVATION_1}>
+                        <MenuDivider title="Main" />
+                        <MenuItem icon="home" text="Home" />
+                        <MenuDivider title="Core" />
+                        <MenuItem icon="widget" text="Components">
+                            {coreComponentItems.map(({ href, title }) => (
                                 <li className="m-2" key={title}>
                                     <Link href={href}>
-                                        <a
-                                            className={`flex p-2 bg-slate-200 rounded hover:bg-slate-400 cursor-pointer ${
-                                                router.asPath === href && 'bg-slate-600 text-white'
-                                            }`}
-                                        >
-                                            {title}
-                                        </a>
+                                        <MenuItem text={title} />
                                     </Link>
                                 </li>
                             ))}
-                        </ul>
-                    </nav>
+                        </MenuItem>
+                        <MenuItem icon="control" text="Form Controls">
+                            {coreFormControlItems.map(({ href, title }) => (
+                                <li className="m-2" key={title}>
+                                    <Link href={href}>
+                                        <MenuItem text={title} />
+                                    </Link>
+                                </li>
+                            ))}
+                        </MenuItem>
+                    </Menu>
                 </aside>
                 <main className="flex-1">
                     <div className="main">{children}</div>

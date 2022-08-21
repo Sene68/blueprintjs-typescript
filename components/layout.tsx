@@ -101,6 +101,10 @@ export default function Layout({ children }: LayoutProps) {
             href: '/core/slider',
             title: 'Slider',
         },
+        {
+            href: '/core/switch',
+            title: 'Switch',
+        },
     ];
 
     return (

@@ -108,6 +108,12 @@ export default function Layout({ children }: LayoutProps) {
             title: 'Switch',
         },
     ];
+    const coreFormInputItems = [
+        {
+            href: '/core/fileinput',
+            title: 'File Input',
+        },
+    ];
 
     return (
         <div className="min-h-screen flex flex-col">
@@ -128,6 +134,15 @@ export default function Layout({ children }: LayoutProps) {
                         </MenuItem>
                         <MenuItem icon="control" text="Form Controls">
                             {coreFormControlItems.map(({ href, title }) => (
+                                <li className="m-2" key={title}>
+                                    <Link href={href}>
+                                        <MenuItem text={title} />
+                                    </Link>
+                                </li>
+                            ))}
+                        </MenuItem>
+                        <MenuItem icon="log-in" text="Form Inputs">
+                            {coreFormInputItems.map(({ href, title }) => (
                                 <li className="m-2" key={title}>
                                     <Link href={href}>
                                         <MenuItem text={title} />

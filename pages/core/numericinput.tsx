@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 
 import {
-    Button,
     H5,
     HTMLSelect,
-    Intent,
     Label,
-    Menu,
-    MenuItem,
     NumericInput,
     NumericInputProps,
     OptionProps,
@@ -19,14 +15,8 @@ import {
     IExampleProps,
     handleBooleanChange,
     handleNumberChange,
-    handleStringChange,
     handleValueChange,
 } from '@blueprintjs/docs-theme';
-import { IconNames } from '@blueprintjs/icons';
-import { Popover2 } from '@blueprintjs/popover2';
-
-import { IntentSelect } from '../../components/common/intentSelect';
-import { LOCALES } from '../../components/common/locales';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 

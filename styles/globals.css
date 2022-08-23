@@ -118,3 +118,7 @@ a {
 .docs-example-formgroup .docs-example {
   flex-direction: column;
 }
+
+.sidebar-link {
+  margin-left: 34px;
+}

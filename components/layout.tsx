@@ -10,10 +10,6 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
     const coreComponentItems = [
         {
-            href: '/',
-            title: 'Homepage',
-        },
-        {
             href: '/core/breadcrumbs',
             title: 'BreadCrumbs',
         },
@@ -127,33 +123,30 @@ export default function Layout({ children }: LayoutProps) {
                         <MenuDivider title="Main" />
                         <MenuItem icon="home" text="Home" />
                         <MenuDivider title="Core" />
-                        <MenuItem icon="widget" text="Components">
+                        <MenuItem icon="widget" text="Components" />
+                        <ul>
                             {coreComponentItems.map(({ href, title }) => (
-                                <li className="m-2" key={title}>
-                                    <Link href={href}>
-                                        <MenuItem text={title} />
-                                    </Link>
+                                <li className="m-2 sidebar-link" key={title}>
+                                    <Link href={href}>{title}</Link>
                                 </li>
                             ))}
-                        </MenuItem>
-                        <MenuItem icon="control" text="Form Controls">
+                        </ul>
+                        <MenuItem icon="control" text="Form Controls" />
+                        <ul>
                             {coreFormControlItems.map(({ href, title }) => (
-                                <li className="m-2" key={title}>
-                                    <Link href={href}>
-                                        <MenuItem text={title} />
-                                    </Link>
+                                <li className="m-2 sidebar-link" key={title}>
+                                    <Link href={href}>{title}</Link>
                                 </li>
                             ))}
-                        </MenuItem>
-                        <MenuItem icon="log-in" text="Form Inputs">
+                        </ul>
+                        <MenuItem icon="log-in" text="Form Inputs" />
+                        <ul>
                             {coreFormInputItems.map(({ href, title }) => (
-                                <li className="m-2" key={title}>
-                                    <Link href={href}>
-                                        <MenuItem text={title} />
-                                    </Link>
+                                <li className="m-2 sidebar-link" key={title}>
+                                    <Link href={href}>{title}</Link>
                                 </li>
                             ))}
-                        </MenuItem>
+                        </ul>
                     </Menu>
                 </aside>
                 <main className="flex-1">

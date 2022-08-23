@@ -113,6 +113,10 @@ export default function Layout({ children }: LayoutProps) {
             href: '/core/fileinput',
             title: 'File Input',
         },
+        {
+            href: '/core/numericinput',
+            title: 'Numeric Input',
+        },
     ];
 
     return (

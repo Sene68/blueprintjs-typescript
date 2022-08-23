@@ -51,8 +51,8 @@ const BUTTON_POSITIONS = [
 ];
 
 export interface LeftSwitchProp {
-    displayLeftIcon?: string;
-    displayLeftElement?: string;
+    leftIcon?: string | boolean;
+    leftElement?: string | boolean;
 }
 
 export default function NumericInputBasicExample(IExampleProps: IExampleProps) {
@@ -72,35 +72,15 @@ export default function NumericInputBasicExample(IExampleProps: IExampleProps) {
         value: '',
     });
 
-    const [intent, setIntent] = useState<Intent>(Intent.NONE);
-
-    const [locale, setLocale] = useState<string>('');
-    const [leftIcon, setLeftIcon] = useState<boolean>(false);
-    const [leftElement, setLeftElement] = useState<boolean>(false);
-
-    const [leftSwitch, setLeftSwitch] = useState<LeftSwitchProp>({
-        displayLeftIcon: '',
-        displayLeftElement: '',
-    });
-
     const handleMaxChange = handleNumberChange((max: number) =>
         setState({
-            ...state,
             max: max,
         }),
     );
 
     const handleMinChange = handleNumberChange((min: number) =>
         setState({
-            ...state,
             min: min,
-        }),
-    );
-
-    const handleIntentChange = handleValueChange((intent: Intent) =>
-        setState({
-            ...state,
-            intent: intent,
         }),
     );
 
@@ -111,38 +91,10 @@ export default function NumericInputBasicExample(IExampleProps: IExampleProps) {
         }),
     );
 
-    const handleLocaleChange = handleStringChange((locale: string) => setLocale(locale));
-
     const toggleDisabled = handleBooleanChange((disabled: boolean) =>
         setState({
             ...state,
             disabled: disabled,
-        }),
-    );
-
-    const toggleLeftIcon = handleBooleanChange((leftIcon: boolean) =>
-        setLeftSwitch({
-            ...leftSwitch,
-            displayLeftIcon: leftIcon ? 'dollar' : undefined,
-        }),
-    );
-
-    const toggleLeftElement = handleBooleanChange((leftElement) =>
-        setState({
-            leftElement: leftElement ? (
-                <Popover2
-                    position="bottom"
-                    content={
-                        <Menu>
-                            <MenuItem icon={IconNames.Equals} text={'Equals'} />
-                            <MenuItem icon={IconNames.LessThan} text={'Less than'} />
-                            <MenuItem icon={IconNames.GreaterThan} text={'Greater than'} />
-                        </Menu>
-                    }
-                >
-                    <Button minimal={true} icon={IconNames.Filter} />
-                </Popover2>
-            ) : undefined,
         }),
     );
 
@@ -164,20 +116,6 @@ export default function NumericInputBasicExample(IExampleProps: IExampleProps) {
         setState({
             ...state,
             allowNumericCharactersOnly: allowNumericCharactersOnly,
-        }),
-    );
-
-    const toggleSelectAllOnFocus = handleBooleanChange((selectAllOnFocus: boolean) =>
-        setState({
-            ...state,
-            selectAllOnFocus: selectAllOnFocus,
-        }),
-    );
-
-    const toggleSelectAllOnIncrement = handleBooleanChange((selectAllOnIncrement: boolean) =>
-        setState({
-            ...state,
-            selectAllOnIncrement: selectAllOnIncrement,
         }),
     );
 
@@ -211,16 +149,10 @@ export default function NumericInputBasicExample(IExampleProps: IExampleProps) {
             {renderSwitch('Disabled', state.disabled, toggleDisabled)}
             {renderSwitch('Fill', state.fill, toggleFullWidth)}
             {renderSwitch('Large', state.large, toggleLargeSize)}
-            {renderSwitch('Left icon', leftIcon != null, toggleLeftIcon)}
-            {renderSwitch('Left element', leftElement != null, toggleLeftElement)}
             {renderSwitch('Numeric characters only', state.allowNumericCharactersOnly, toggleNumericCharsOnly)}
-            {renderSwitch('Select all on focus', state.selectAllOnFocus, toggleSelectAllOnFocus)}
-            {renderSwitch('Select all on increment', state.selectAllOnIncrement, toggleSelectAllOnIncrement)}
             {renderSelectMenu('Minimum value', state.min, MIN_VALUES, handleMinChange)}
             {renderSelectMenu('Maximum value', state.max, MAX_VALUES, handleMaxChange)}
             {renderSelectMenu('Button position', state.buttonPosition, BUTTON_POSITIONS, handleButtonPositionChange)}
-            <IntentSelect intent={intent} onChange={handleIntentChange} />
-            {renderSelectMenu('Locale', locale, [{ label: 'Default', value: 0 }, ...LOCALES], handleLocaleChange)}
         </>
     );
 

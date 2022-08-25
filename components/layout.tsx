@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Classes, Menu, MenuDivider, MenuItem } from '@blueprintjs/core';
+import { coreComponentItems, coreFormControlItems, coreFormInputItems } from '../utils/nav-link';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 
@@ -8,117 +9,6 @@ type LayoutProps = {
 };
 
 export default function Layout({ children }: LayoutProps) {
-    const coreComponentItems = [
-        {
-            href: '/core/breadcrumbs',
-            title: 'BreadCrumbs',
-        },
-        {
-            href: '/core/buttons',
-            title: 'Buttons',
-        },
-        {
-            href: '/core/buttongroup',
-            title: 'Button Group',
-        },
-        {
-            href: '/core/callout',
-            title: 'Callout',
-        },
-        {
-            href: '/core/card',
-            title: 'Card',
-        },
-        {
-            href: '/core/collapse',
-            title: 'Collapse',
-        },
-        {
-            href: '/core/divider',
-            title: 'Divider',
-        },
-        {
-            href: '/core/editabletext',
-            title: 'Editable Text',
-        },
-        {
-            href: '/core/icon',
-            title: 'Icon',
-        },
-        {
-            href: '/core/menu',
-            title: 'Menu',
-        },
-        {
-            href: '/core/navbar',
-            title: 'Navbar',
-        },
-        {
-            href: '/core/nonIdealState',
-            title: 'Non Ideal State',
-        },
-        {
-            href: '/core/progress',
-            title: 'Progress',
-        },
-        {
-            href: '/core/spinner',
-            title: 'Spinner',
-        },
-        {
-            href: '/core/tag',
-            title: 'Tag',
-        },
-        {
-            href: '/core/text',
-            title: 'Text',
-        },
-        {
-            href: '/core/tree',
-            title: 'Tree',
-        },
-    ];
-    const coreFormControlItems = [
-        {
-            href: '/core/formgroup',
-            title: 'Form group',
-        },
-        {
-            href: '/core/controlgroup',
-            title: 'Control group',
-        },
-        {
-            href: '/core/checkbox',
-            title: 'Checkbox',
-        },
-        {
-            href: '/core/radio',
-            title: 'Radio',
-        },
-        {
-            href: '/core/slider',
-            title: 'Slider',
-        },
-        {
-            href: '/core/switch',
-            title: 'Switch',
-        },
-    ];
-    const coreFormInputItems = [
-        {
-            href: '/core/fileinput',
-            title: 'File Input',
-        },
-        {
-            href: '/core/numericinput',
-            title: 'Numeric Input',
-        },
-        {
-            href: '/core/textinput',
-            title: 'Text Input',
-        },
-    ];
-
     return (
         <div className="min-h-screen flex flex-col">
             <div className="flex flex-col md:flex-row flex-1">

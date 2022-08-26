@@ -107,4 +107,8 @@ export const coreFormInputItems = [
         href: '/core/textinput',
         title: 'Text Input',
     },
+    {
+        href: '/core/taginput',
+        title: 'Tag Input',
+    },
 ];

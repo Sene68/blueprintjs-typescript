@@ -122,3 +122,10 @@ a {
 .sidebar-link {
   margin-left: 34px;
 }
+
+.docs-overlay-example-transition {
+  left: calc(50vw - 200px);
+  margin: 10vh 0;
+  top: 0;
+  width: 400px;
+}

@@ -112,3 +112,9 @@ export const coreFormInputItems = [
         title: 'Tag Input',
     },
 ];
+export const overlayItems = [
+    {
+        href: '/core/overlay',
+        title: 'Overlay',
+    },
+];

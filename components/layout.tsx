@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import { Classes, Menu, MenuDivider, MenuItem } from '@blueprintjs/core';
-import { coreComponentItems, coreFormControlItems, coreFormInputItems, overlayItems } from '../utils/nav-link';
+import {
+    coreComponentItems,
+    coreFormControlItems,
+    coreFormInputItems,
+    overlayItems,
+    datetimeItems,
+} from '../utils/nav-link';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
 
@@ -44,6 +50,15 @@ export default function Layout({ children }: LayoutProps) {
                         <MenuItem icon="log-in" text="Overlays" />
                         <ul>
                             {overlayItems.map(({ href, title }) => (
+                                <li className="m-2 sidebar-link" key={title}>
+                                    <Link href={href}>{title}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                        <MenuDivider title="Datetime" />
+                        <MenuItem icon="calendar" text="Datetime" />
+                        <ul>
+                            {datetimeItems.map(({ href, title }) => (
                                 <li className="m-2 sidebar-link" key={title}>
                                     <Link href={href}>{title}</Link>
                                 </li>

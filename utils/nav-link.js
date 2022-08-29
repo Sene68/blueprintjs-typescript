@@ -118,3 +118,9 @@ export const overlayItems = [
         title: 'Overlay',
     },
 ];
+export const datetimeItems = [
+    {
+        href: '/datetime/datepicker',
+        title: 'Date Picker',
+    },
+];

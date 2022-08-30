@@ -20,3 +20,16 @@ export const MomentDate: React.FC<{ date: Date | null; format?: string; withTime
         return <Tag minimal={true}>no date</Tag>;
     }
 };
+
+export const MomentDateRange: React.FC<{ range: DateRange; format?: string; withTime?: boolean } & Props> = ({
+    className,
+    range: [start, end],
+    withTime = false,
+    format = withTime ? FORMAT_TIME : FORMAT,
+}) => (
+    <div className={classNames('docs-date-range', className)}>
+        <MomentDate withTime={withTime} date={start} format={format} />
+        <Icon icon="arrow-right" />
+        <MomentDate withTime={withTime} date={end} format={format} />
+    </div>
+);

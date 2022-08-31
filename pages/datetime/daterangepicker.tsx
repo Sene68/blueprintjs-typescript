@@ -3,13 +3,7 @@ import React, { useState } from 'react';
 
 import { Classes, H5, HTMLSelect, Label, Switch } from '@blueprintjs/core';
 import { DateRange, DateRangePicker, TimePrecision } from '@blueprintjs/datetime';
-import {
-    Example,
-    IExampleProps,
-    handleBooleanChange,
-    handleNumberChange,
-    handleValueChange,
-} from '@blueprintjs/docs-theme';
+import { Example, IExampleProps, handleBooleanChange, handleNumberChange } from '@blueprintjs/docs-theme';
 
 import { MomentDateRange } from '../../components/common/momentDate';
 

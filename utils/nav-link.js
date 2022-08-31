@@ -127,4 +127,8 @@ export const datetimeItems = [
         href: '/datetime/daterangepicker',
         title: 'Date Range Picker',
     },
+    {
+        href: '/datetime/timepicker',
+        title: 'Time Picker',
+    },
 ];

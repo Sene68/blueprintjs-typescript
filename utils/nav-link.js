@@ -131,4 +131,8 @@ export const datetimeItems = [
         href: '/datetime/timepicker',
         title: 'Time Picker',
     },
+    {
+        href: '/datetime/dateinput',
+        title: 'Date Input',
+    },
 ];

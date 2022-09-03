@@ -135,4 +135,8 @@ export const datetimeItems = [
         href: '/datetime/dateinput',
         title: 'Date Input',
     },
+    {
+        href: '/datetime/daterangeinput',
+        title: 'Date Range Input',
+    },
 ];

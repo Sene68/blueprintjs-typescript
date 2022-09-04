@@ -139,4 +139,8 @@ export const datetimeItems = [
         href: '/datetime/daterangeinput',
         title: 'Date Range Input',
     },
+    {
+        href: '/datetime/timezoneSelect',
+        title: 'Timezone Select',
+    },
 ];

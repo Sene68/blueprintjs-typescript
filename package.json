@@ -15,7 +15,7 @@
     "@blueprintjs/docs-theme": "^4.3.3",
     "@blueprintjs/eslint-config": "^2.2.0",
     "@blueprintjs/eslint-plugin-blueprint": "^0.1.0",
-    "@blueprintjs/popover2": "^1.5.0",
+    "@blueprintjs/popover2": "^1.6.3",
     "@blueprintjs/select": "^4.6.3",
     "date-fns": "^2.29.2",
     "lodash-es": "^4.17.21",

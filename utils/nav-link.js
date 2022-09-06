@@ -144,3 +144,9 @@ export const datetimeItems = [
         title: 'Timezone Select',
     },
 ];
+export const selectItems = [
+    {
+        href: '/select/select',
+        title: 'Select',
+    },
+];

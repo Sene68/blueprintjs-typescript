@@ -6,6 +6,7 @@ import {
     coreFormInputItems,
     overlayItems,
     datetimeItems,
+    selectItems,
 } from '../utils/nav-link';
 
 import '@blueprintjs/core/lib/css/blueprint.css';
@@ -59,6 +60,15 @@ export default function Layout({ children }: LayoutProps) {
                         <MenuItem icon="calendar" text="Datetime" />
                         <ul>
                             {datetimeItems.map(({ href, title }) => (
+                                <li className="m-2 sidebar-link" key={title}>
+                                    <Link href={href}>{title}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                        <MenuDivider title="Select" />
+                        <MenuItem icon="multi-select" text="Select" />
+                        <ul>
+                            {selectItems.map(({ href, title }) => (
                                 <li className="m-2 sidebar-link" key={title}>
                                     <Link href={href}>{title}</Link>
                                 </li>

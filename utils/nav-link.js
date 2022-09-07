@@ -149,4 +149,8 @@ export const selectItems = [
         href: '/select/select',
         title: 'Select',
     },
+    {
+        href: '/select/suggest',
+        title: 'Segguest',
+    },
 ];

@@ -153,4 +153,8 @@ export const selectItems = [
         href: '/select/suggest',
         title: 'Segguest',
     },
+    {
+        href: '/select/multiselect',
+        title: 'Multi Select',
+    },
 ];

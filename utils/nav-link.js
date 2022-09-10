@@ -157,4 +157,8 @@ export const selectItems = [
         href: '/select/multiselect',
         title: 'Multi Select',
     },
+    {
+        href: '/select/omnibar',
+        title: 'Omnibar',
+    },
 ];

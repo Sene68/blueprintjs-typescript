@@ -162,3 +162,9 @@ export const selectItems = [
         title: 'Omnibar',
     },
 ];
+export const tableItems = [
+    {
+        href: '/table/tabledollar',
+        title: 'Table Dollar',
+    },
+];
